@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DateLine</title>
+    <link rel="stylesheet" href="css/dateline.css">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+</head>
+<body>
+    <div id="reserve-dl"></div>
+    <div id="debug"></div>
+
+    <script src="js/zepto.min.js"></script>
+    <script src="js/calendar-generator.js"></script>
+    <script src="js/dateline.js"></script>
+    <script>
+        (function($) {
+            var $dateline = $('#reserve-dl').dateLine();
+            $dateline.on('dateline:changed', function(e, date) {
+                $('#debug').text(date);
+            });
+        }(Zepto));
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+
+
+#reserve-dl {
+    margin: 0 auto;
+}
+
+#debug {
+    background-color: #208AF7;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+.dateline {
+  
+}
+
+.dateline-days *,
+.dateline-months * {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.dateline-months {
+    background-color: #fafafa;
+    position: relative;
+    overflow: hidden;
+}
+
+.dateline-months:before,
+.dateline-months:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.dateline-months:after {
+    clear: both;
+}
+
+
+.dateline-months ul,
+.dateline-days ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dateline-months li,
+.dateline-days li {
+   float: left; 
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dateline-months li {
+    height: 50px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+.dateline-months li small {
+    display: block;
+}
+.dateline-months .selected {
+    background-color: #eee;
+    _color: white;
+}
+
+.dateline-days {
+    border: 1px solid #eee;
+    overflow: hidden;
+    position: relative;
+    height: 60px;   
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dateline-days:before,
+.dateline-days:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.dateline-days:after {
+    clear: both;
+}
+
+.dateline-days .calendar-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.dateline-days li {
+    background-color: white;
+    border-right: 1px solid #eee;
+    display: block;
+    position: relative;
+    width: 48px;
+    height: 60px;
+    z-index: 1;
+}
+.dateline-days li span {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+.dateline-days li em {
+    display: block;
+    color: #ccc;
+    font-weight: normal;
+    font-size: 11px;
+    font-style: normal;
+    line-height: 1;
+}
+.dateline-days li strong {
+    background-color: white;
+    color: #666;
+    display: block;
+    font-size: 11px;
+    text-transform: lowercase;
+    padding: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96px;
+    z-index: 400;
+}
+.dateline-days .past span {
+    color: #aaa;
+}
+
+.dateline-days .weekend span {
+    color: #C24C4C;
+}
+.dateline-days .weekend span em {
+    color: #F0B8BA;
+}
+.dateline-days .weekend.past span {
+    color: #F0B8BA;
+}
+
+.dateline-days .today span {
+    color: #6AA44B;
+}
+
+.dateline-days .selected:after {
+    background-color: #6AA44B;
+    border-radius: 10px;
+    border: 2px solid white;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    margin: 5px 0 0 -5px;
+    z-index: 520;
+}
