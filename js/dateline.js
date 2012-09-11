@@ -287,7 +287,7 @@
 
         // Create days list
         this.$.daysContainer.html( 
-            сalendarGenerator.generate({
+            calendarGenerator.generate({
                 start: this.dates.start,
                 end: this.dates.end,
                 daylabels: true,
