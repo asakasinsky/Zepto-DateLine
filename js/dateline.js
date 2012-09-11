@@ -8,7 +8,7 @@
         }
     };
 
-    var сalendarGenerator = (function() {
+    var calendarGenerator = (function() {
         var now = new Date(),
             today = new Date(now.getFullYear(), now.getMonth(), now.getDate()),
             now_time = +now,
