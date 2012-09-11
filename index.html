@@ -14,10 +14,11 @@
     <script src="js/dateline.js"></script>
     <script>
         (function($) {
-            var $dateline = $('#reserve-dl').dateLine();
+            var $dateline = $('#reserve-dl');
             $dateline.on('dateline:changed', function(e, date) {
                 $('#debug').text(date);
             });
+            $dateline.dateLine();
         }(Zepto));
     </script>
 </body>

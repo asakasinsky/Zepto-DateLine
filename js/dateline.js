@@ -102,6 +102,7 @@
         this.$.el.append(this.$.monthsContainer, this.$.daysContainer);
         this.$.container.append(this.$.el);
 
+        this.setDate(this.$.days.filter('.today').data('date'));
         this.collectParams();
         
         this.$.container.css('width', this.days.pageWidth + 'px');
@@ -126,10 +127,7 @@
             .on('tap', 'li', function() {
                 var $el = $(this);
                 if (!$el.hasClass('past')) {
-                    that.dates.selected = $el.data('date');
-                    that.$.days.removeClass('selected');
-                    $el.addClass('selected');
-                    that.$.container.trigger('dateline:changed', [that.dates.selected]);
+                    that.setDate($el.data('date'));
                 }
             });
 
@@ -174,7 +172,7 @@
         };
 
         this.days.itemWidth = this.$.days.first().width();
-        this.days.onScreen = Math.floor($(window).width() / this.days.itemWidth);
+        this.days.onScreen = Math.floor(this.$.container.width() / this.days.itemWidth);
         this.days.totalPages = Math.floor(this.$.days.length / this.options.swipeDaysCount);
         this.days.pageWidth = this.days.onScreen * this.days.itemWidth;
 
@@ -247,6 +245,19 @@
                 }, 300, 'ease-out');
             }
         }
+    };
+
+    DateLine.prototype.setDate = function(date) {
+        this.dates.selected = date;
+        this.$.days
+            .removeClass('selected')
+            .filter('[data-date="' + date + '"]').addClass('selected');
+        this.$.container.trigger('dateline:changed', [this.dates.selected]);
+
+    };
+
+    DateLine.prototype.getDate = function() {
+        return this.dates.selected;
     };
 
     $.fn.dateLine = function(options) {
